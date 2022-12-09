@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mynginx
+  name: eureka
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: mynginx
+      run: eureka
   template:
     metadata:
       labels:
-        run: mynginx
+        run: eureka
     spec:
       containers:
-      - image: nginx
-        name: mynginx
+      - image: parks4754/eureka-server
+        name: eureka
         ports:
         - containerPort: 80
